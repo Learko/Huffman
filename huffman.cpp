@@ -129,8 +129,7 @@ void decode(const string &file) {
 
     ofstream ofs(file.substr(0, file.length() - 4) + ".dec"s);
 
-    dynamic_bitset<> code;
-    node *curr = pq.top();
+    auto curr = pq.top();
 
     for (auto i = 0u; i < data.size(); ++i) {
         curr = data[i] ? curr->rhs : curr->lhs;
